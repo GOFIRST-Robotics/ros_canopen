@@ -206,11 +206,11 @@ protected:
                 //ROSCANOPEN_ERROR("socketcan_interface", "internal error: " << input_.id);
                 setInternalError(input_.id);
                 //setNotReady();
-                ROSCANOPEN_ERROR("error: " << input_.id);
+                ROSCANOPEN_ERROR("socketcan_interface", "error: " << input_.id);
                 if (frame_.can_id & CAN_ERR_LOSTARB ||
                     frame_.can_id & CAN_ERR_CRTL)
                 {
-                  ROSCANOPEN_WARN("warn: ignoring arbitration (2) or controller (4) error");
+                  ROSCANOPEN_WARN("socketcan_interface", "warn: ignoring arbitration (2) or controller (4) error");
                 } else {
                   setNotReady();
                 }
